@@ -16,7 +16,7 @@ provides=(linux-firmware)
 makedepends=(git)
 options=(!strip)
 source=("https://gitlab.com/kernel-firmware/linux-firmware/-/archive/${pkgver}/linux-firmware-${pkgver}.tar.gz")
-sha256sums=(25cd47c86b1f5f759146cb7e6b8c49c3a48b39dec50734af7298ab910ee0e996)
+sha256sums=(fe7687f7264ef1193704824c884be515cd385c15303962cb85c929d40c6cd5b9)
 
 _dir="linux-firmware-${pkgver}"
 _folders="qcom qca ath10k"
