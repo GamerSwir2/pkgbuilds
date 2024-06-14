@@ -1,14 +1,14 @@
 _mode=cross
 _nodeps=true
 pkgname=device-sdm845-oneplus-enchilada
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 _arches=specific
 arch=(aarch64)
 license=(MIT)
 depends=(device-sdm845-oneplus-common)
 
-_commit=ff6721c3c848ab893677dfe437d3430661ec3cc7
+_commit=1761c761b25475d661a4c4f8397f770bbee33563
 source=(
     machine-info
     https://gitlab.com/postmarketOS/pmaports/-/raw/${_commit}/device/community/device-oneplus-enchilada/deviceinfo
