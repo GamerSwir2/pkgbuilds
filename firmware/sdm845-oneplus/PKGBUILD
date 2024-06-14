@@ -20,8 +20,7 @@ sha256sums=(
 build() {
     cd "$srcdir"/firmware-oneplus-sdm845
     rm -r lib/firmware/postmarketos/ath10k
-    mv lib/* usr/lib
-    rmdir lib
+    mv lib usr/lib/
     cd usr/lib/firmware
     mv postmarketos kupfer
 }
