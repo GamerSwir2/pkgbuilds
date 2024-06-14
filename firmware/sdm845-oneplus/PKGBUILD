@@ -14,7 +14,7 @@ source=(
 )
 sha256sums=(
     SKIP
-    c8315064eda03b86b5f9388f6524dd5973ec02d260cf2ae18a5cb594f44cccdb
+    5edcc0907636068baec2308aab59084b2dfc0e0066e0735fa983f4541b1fa9e6
 )
 
 build() {
