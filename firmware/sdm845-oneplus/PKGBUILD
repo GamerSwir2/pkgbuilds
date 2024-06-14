@@ -1,0 +1,33 @@
+_mode=cross
+pkgname=firmware-sdm845-oneplus
+pkgver=0.5
+pkgrel=1
+_arches=specific
+arch=(aarch64)
+license=(custom:Proprietary)
+options=(!strip)
+_commit=1e944d6e7911df311f1b5df5a0fb29c11defc70a
+_board2_commit=1201b414261e7d4f36affd00e54794dc5a011df8
+source=(
+    "git+https://gitlab.com/sdm845-mainline/firmware-oneplus-sdm845.git#commit=${_commit}"  # branch=prepackaged-release
+    https://gitlab.com/dylanvanassche/ath10k-firmware/-/raw/$_board2_commit/linux-firmware/board-2.bin
+)
+sha256sums=(
+    SKIP
+    c8315064eda03b86b5f9388f6524dd5973ec02d260cf2ae18a5cb594f44cccdb
+)
+
+build() {
+    cd "$srcdir"/firmware-oneplus-sdm845
+    rm -r lib/firmware/postmarketos/ath10k
+    mv lib/* usr/lib
+    rmdir lib
+    cd usr/lib/firmware
+    mv postmarketos kupfer
+}
+
+package() {
+    install -Dm644 "$srcdir"/board-2.bin "$pkgdir"/usr/lib/firmware/kupfer/ath10k/WCN3990/hw1.0/board-2.bin
+
+    cp -avf "$srcdir"/firmware-oneplus-sdm845/* "$pkgdir"/
+}
