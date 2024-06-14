@@ -12,7 +12,7 @@ makedepends=(
     linux-headers
 )
 
-_commit=77b48f092a3690d587e2d3b1e30cf8bc2abf87e7
+_commit=b8d22489141b2904dd1ab3d18912876b6dbe8284
 source=(
     "git+https://gitlab.com/sdm845-mainline/qbootctl.git#commit=$_commit"
     qbootctl.service
